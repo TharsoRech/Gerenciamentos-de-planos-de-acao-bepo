@@ -1,0 +1,86 @@
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Select.Html.dep
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo_TemporaryKey.pfx
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.exe.config
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.exe.manifest
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.application
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.exe
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.pdb
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.xml
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\MetroFramework.dll
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Microsoft.Exchange.WebServices.dll
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Microsoft.Win32.TaskScheduler.dll
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Select.HtmlToPdf.dll
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\SelectPdf.Samples.dll
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\System.Windows.Forms.Ribbon35.dll
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\W3Common.dll
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Select.HtmlToPdf.xml
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\SelectPdf.Samples.pdb
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\System.Windows.Forms.Ribbon35.pdb
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Addaction.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.AlertasControlvb.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Configurações.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Conta.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Form1.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Historico.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Histórico_de_Plano_de_Ação.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Login.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Resources.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.NewRegistry.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.NovoPlano.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.PlanoControl.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.VisualizarPlano.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.vbproj.GenerateResource.Cache
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.TrustInfo.xml
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.exe.manifest
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.application
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.exe
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.xml
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.pdb
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Select.Html.dep
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo_TemporaryKey.pfx
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.exe.config
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.exe.manifest
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.application
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.exe
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.pdb
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Planos de ação Bepo.xml
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\MetroFramework.dll
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Microsoft.Exchange.WebServices.dll
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Microsoft.Win32.TaskScheduler.dll
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Select.HtmlToPdf.dll
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\SelectPdf.Samples.dll
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\System.Windows.Forms.Ribbon35.dll
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\W3Common.dll
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\Select.HtmlToPdf.xml
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\SelectPdf.Samples.pdb
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\System.Windows.Forms.Ribbon35.pdb
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.vbprojResolveAssemblyReference.cache
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Addaction.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.AlertasControlvb.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Configurações.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Conta.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Form1.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Historico.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Histórico_de_Plano_de_Ação.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Login.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Resources.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.NewRegistry.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.NovoPlano.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.PlanoControl.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.VisualizarPlano.resources
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.vbproj.GenerateResource.Cache
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.TrustInfo.xml
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.exe.manifest
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.application
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.exe
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.xml
+\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.pdb
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.ListadeExcluidos.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Clientes.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos de ação Bepo.vbprojResolveAssemblyReference.cache
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.SelecionarRelatorio.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Contatar.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\obj\Debug\Planos_de_ação_Bepo.Gráfico.resources
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\EPPlus.dll
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\EPPlus.pdb
+C:\Users\tharso.curia.BEPO\Documents\Visual Studio 2015\Projects\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\bin\Debug\EPPlus.xml

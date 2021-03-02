@@ -156,39 +156,39 @@ Partial Class Configurações
         'CurrentVersion
         '
         Me.CurrentVersion.AutoSize = True
-        Me.CurrentVersion.Font = New System.Drawing.Font("Carlito", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CurrentVersion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CurrentVersion.Location = New System.Drawing.Point(75, 35)
         Me.CurrentVersion.Name = "CurrentVersion"
-        Me.CurrentVersion.Size = New System.Drawing.Size(0, 23)
+        Me.CurrentVersion.Size = New System.Drawing.Size(0, 24)
         Me.CurrentVersion.TabIndex = 79
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.Location = New System.Drawing.Point(6, 35)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(63, 22)
+        Me.Label17.Size = New System.Drawing.Size(75, 24)
         Me.Label17.TabIndex = 78
         Me.Label17.Text = "Versão:"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(473, 430)
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(455, 430)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(131, 22)
+        Me.Label15.Size = New System.Drawing.Size(160, 24)
         Me.Label15.TabIndex = 77
         Me.Label15.Text = "Senha(Windows):"
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(461, 392)
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(446, 392)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(143, 22)
+        Me.Label16.Size = New System.Drawing.Size(169, 24)
         Me.Label16.TabIndex = 76
         Me.Label16.Text = "Usuário(Windows):"
         '
@@ -288,10 +288,10 @@ Partial Class Configurações
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Carlito", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(461, 325)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(318, 23)
+        Me.Label12.Size = New System.Drawing.Size(350, 24)
         Me.Label12.TabIndex = 64
         Me.Label12.Text = "Configurações  do  do servidor de alerta:"
         '
@@ -309,20 +309,20 @@ Partial Class Configurações
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Carlito", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(6, 325)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(364, 23)
+        Me.Label10.Size = New System.Drawing.Size(402, 24)
         Me.Label10.TabIndex = 62
         Me.Label10.Text = "Configurações  do  Email remetente dos alerta:"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(6, 491)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 22)
+        Me.Label9.Size = New System.Drawing.Size(85, 24)
         Me.Label9.TabIndex = 61
         Me.Label9.Text = "Servidor:"
         '
@@ -356,30 +356,30 @@ Partial Class Configurações
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(348, 290)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(180, 22)
+        Me.Label8.Size = New System.Drawing.Size(219, 24)
         Me.Label8.TabIndex = 58
         Me.Label8.Text = "Configurações  de alerta:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(21, 449)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(56, 22)
+        Me.Label6.Size = New System.Drawing.Size(70, 24)
         Me.Label6.TabIndex = 57
         Me.Label6.Text = "Senha:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(21, 408)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(52, 22)
+        Me.Label7.Size = New System.Drawing.Size(62, 24)
         Me.Label7.TabIndex = 56
         Me.Label7.Text = "Email:"
         '
@@ -548,10 +548,10 @@ Partial Class Configurações
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(299, 125)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(240, 22)
+        Me.Label2.Size = New System.Drawing.Size(296, 24)
         Me.Label2.TabIndex = 40
         Me.Label2.Text = "Configurações de Alerta de Email:"
         '
@@ -560,7 +560,7 @@ Partial Class Configurações
         Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Century", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(781, 82)
+        Me.Button1.Location = New System.Drawing.Point(780, 85)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(153, 24)
         Me.Button1.TabIndex = 38
@@ -570,23 +570,23 @@ Partial Class Configurações
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(6, 82)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(164, 22)
+        Me.Label1.Size = New System.Drawing.Size(197, 24)
         Me.Label1.TabIndex = 36
         Me.Label1.Text = "Localização Database:"
         '
         'DatabaseLocationtext
         '
         Me.DatabaseLocationtext.Lines = New String(-1) {}
-        Me.DatabaseLocationtext.Location = New System.Drawing.Point(176, 81)
+        Me.DatabaseLocationtext.Location = New System.Drawing.Point(209, 85)
         Me.DatabaseLocationtext.MaxLength = 32767
         Me.DatabaseLocationtext.Name = "DatabaseLocationtext"
         Me.DatabaseLocationtext.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.DatabaseLocationtext.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.DatabaseLocationtext.SelectedText = ""
-        Me.DatabaseLocationtext.Size = New System.Drawing.Size(599, 23)
+        Me.DatabaseLocationtext.Size = New System.Drawing.Size(566, 23)
         Me.DatabaseLocationtext.TabIndex = 35
         Me.DatabaseLocationtext.UseSelectable = True
         '

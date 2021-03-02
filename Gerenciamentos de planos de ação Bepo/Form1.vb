@@ -260,7 +260,9 @@ Public Class Form1
     End Sub
     Private Sub Alerrtas1(sender As Object, e As EventArgs) Handles CheckActionButton.Click
         Try
+
             AlertasControlvb.Show()
+
         Catch ex As Exception
 
         End Try
@@ -313,41 +315,42 @@ Public Class Form1
                                 End If
                                 For Each ac As Ação In x2.Ações
                                     Dim responsaveis As String = ""
-                                    If ac.Responsáveis Is Nothing Then
-                                        ac.Responsáveis = New List(Of String)
-                                        save()
-                                    End If
-                                    For Each lt As String In ac.Responsáveis
+                                If ac.Responsáveis Is Nothing Then
+                                    ac.Responsáveis = New List(Of String)
+                                    save()
+                                End If
+
+                                For Each lt As String In ac.Responsáveis
                                         responsaveis = responsaveis & lt & ";"
                                     Next
                                     If ac.Ação <> "" Then
-                                        newpl.MetroGrid1.Rows.Add({ac.NãoConformidadeFalha, ac.Ação, responsaveis, ac.GerenteEmail, ac.Evidência, ac.Prazo, ac.Status})
-                                    End If
+                                    newpl.MetroGrid1.Rows.Add({ac.NãoConformidadeFalha, ac.Ação, responsaveis, ac.GerenteEmail, ac.Evidência, ac.Status, ac.Inicio, ac.Prazo, ac.Aprovado, ac.AvaliadorPor, ac.Pontuacao, ac.Obs})
+                                End If
                                 Next
                                 newpl.Inicio.Text = x2.Inicio
-                                newpl.ATualizado.Text = "Alterado pela última vez na data:" & x2.Atualização & ",Pelo usuário:" & x2.AlteradorPor
+                                newpl.Atualizado.Text = "Alterado pela última vez na data:" & x2.Atualização & ",Pelo usuário:" & x2.AlteradorPor
                                 For i = 0 To newpl.MetroGrid1.Rows.Count - 1
-                                    If newpl.MetroGrid1.Rows(i).Cells(6).Value = "Previsto" Then
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.BackColor = Color.DodgerBlue
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.ForeColor = Color.Black
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
-                                    End If
-                                    If newpl.MetroGrid1.Rows(i).Cells(6).Value = "Execução" Then
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.BackColor = Color.Gold
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.ForeColor = Color.Black
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Gold
-                                    End If
-                                    If newpl.MetroGrid1.Rows(i).Cells(6).Value = "Atrasado" Then
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.BackColor = Color.Red
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.ForeColor = Color.Black
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Red
-                                    End If
-                                    If newpl.MetroGrid1.Rows(i).Cells(6).Value = "Concluido" Then
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.BackColor = Color.Green
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.ForeColor = Color.Black
-                                        newpl.MetroGrid1.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Green
-                                    End If
-                                Next
+                                If newpl.MetroGrid1.Rows(i).Cells(5).Value = "Previsto" Then
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.BackColor = Color.DodgerBlue
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.ForeColor = Color.Black
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
+                                End If
+                                If newpl.MetroGrid1.Rows(i).Cells(5).Value = "Execução" Then
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.BackColor = Color.Gold
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.ForeColor = Color.Black
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Gold
+                                End If
+                                If newpl.MetroGrid1.Rows(i).Cells(5).Value = "Atrasado" Then
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.BackColor = Color.Red
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.ForeColor = Color.Black
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Red
+                                End If
+                                If newpl.MetroGrid1.Rows(i).Cells(5).Value = "Concluido" Then
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.BackColor = Color.Green
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.ForeColor = Color.Black
+                                    newpl.MetroGrid1.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Green
+                                End If
+                            Next
                                 TabPage1.Controls.Add(newpl)
                             End If
                         Next
@@ -364,6 +367,7 @@ Public Class Form1
             For Each x1 As User In database.users
                 For Each x2 As PlanoDeAção In x1.Planos
                     For Each ac1 As Ação In x2.Ações
+
                         Dim responsaveis As String = ""
                         If ac1.Responsáveis Is Nothing Then
                             ac1.Responsáveis = New List(Of String)
@@ -390,10 +394,10 @@ Public Class Form1
   </tr> 
   <tr>
     <td width = ""18%"" >Elaborador Por:<b> " & x1.user & "</td>
-     <td width = ""20%"" >Aprovador Por:<b>" & Before(ac1.GerenteEmail, "@") & "</td>
+     <td width = ""20%"" >Avaliador Por:<b>" & ac1.AvaliadorPor & "</td>
   </tr>
 </table>"
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado - 1° ADVERTÊNCIA:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado - 1° ADVERTÊNCIA:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                 If ac1.Ação <> "" Then
                                     html1 = html1 & "<tr  bgcolor=""red""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac1.NãoConformidadeFalha & "</th>" & "<th>" & ac1.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac1.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac1.Prazo & "</th><th>" & ac1.Status & "</th><th>" & ac1.Evidência & "</th></tr>"
                                 End If
@@ -401,7 +405,7 @@ Public Class Form1
 
                                 End If
                             End If
-                            End If
+                        End If
                         If (expenddt - Now.Date).TotalDays = -database.DiadoUltimoaviso And ac1.concluida = False Then
                             If loginews() Then
                                 Dim html1 As String = ""
@@ -411,10 +415,10 @@ Public Class Form1
   </tr> 
   <tr>
     <td width = ""18%"" >Elaborador Por:<b> " & x1.user & "</td>
-     <td width = ""20%"" >Aprovador Por:<b>" & Before(ac1.GerenteEmail, "@") & "</td>
+     <td width = ""20%"" >Avaliador Por:<b>" & ac1.AvaliadorPor & "</td>
   </tr>
 </table>"
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado - 2° ADVERTÊNCIA:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado - 2° ADVERTÊNCIA:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
 
                                 If ac1.Ação <> "" Then
                                     html1 = html1 & "<tr  bgcolor=""red""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac1.NãoConformidadeFalha & "</th>" & "<th>" & ac1.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac1.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac1.Prazo & "</th><th>" & ac1.Status & "</th><th>" & ac1.Evidência & "</th></tr>"
@@ -424,7 +428,7 @@ Public Class Form1
 
                                 End If
                             End If
-                            End If
+                        End If
 
                         If ac1.Atrasada Then
                             Dim newl As New Alerta
@@ -455,18 +459,18 @@ Public Class Form1
   </tr> 
   <tr>
     <td width = ""18%"" >Elaborador Por:<b> " & x1.user & "</td>
-     <td width = ""20%"" >Aprovador Por:<b>" & Before(ac1.GerenteEmail, "@") & "</td>
+     <td width = ""20%"" >Avaliador Por:<b>" & ac1.AvaliadorPor & "</td>
   </tr>
 </table>"
                             Dim mensagem As String = "Plano de ação  em andamento"
-                            html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">" & mensagem & " :</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                            html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">" & mensagem & " :</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                             html1 = html1 & "<tr  bgcolor=""Yellow""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac1.NãoConformidadeFalha & "</th>" & "<th>" & ac1.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac1.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac1.Prazo & "</th><th>" & ac1.Status & "</th><th>" & ac1.Evidência & "</th></tr>"
 
                             If sendmessage(html1, ac1.Responsáveis, ac1.GerenteEmail, database.Enviarresponsávelantes, database.Enviargerenteantes) Then
 
                             End If
                         End If
-                            If ac1.EmExecução Then
+                        If ac1.EmExecução Then
                             Dim newl As New Alerta
                             newl.Prazo = ac1.Prazo
                             newl.Inicio = x2.Inicio
@@ -488,6 +492,30 @@ Public Class Form1
         End Try
 
     End Sub
+    Public Function Checarvaloresnulos(ac1 As Ação, html11 As String) As String
+        Try
+            If ac1.Aprovado = "" Then
+                html11 = html11.Replace("<th>Aprovado</th>", "")
+                html11 = html11.Replace("<th></th>", "")
+            End If
+            If ac1.Obs = "" Then
+                html11 = html11.Replace("<th>Obs</th>", "")
+                html11 = html11.Replace("<th></th>", "")
+            End If
+            If ac1.Pontuacao = "" Then
+                html11 = html11.Replace("<th>Pontuação</th>", "")
+                html11 = html11.Replace("<th></th>", "")
+            End If
+            If ac1.Evidência = "" Then
+                html11 = html11.Replace("<th>Evidência</th>", "")
+                html11 = html11.Replace("<th></th>", "")
+            End If
+            Return html11
+        Catch ex As Exception
+            MsgBox(ex.Message & ex.StackTrace)
+            Return html11
+        End Try
+    End Function
     Public Function loginews() As Boolean
         Dim ok As Boolean = False
         Try
@@ -561,4 +589,28 @@ Public Class Form1
         End Try
     End Function
 
+    Public Sub ChecarAvaliador(ac As Ação)
+        Try
+            If ac.AvaliadorPor Is Nothing Then
+                If ac.AvaliadorPor Is Nothing Then
+                    ac.AvaliadorPor = New String("")
+                End If
+                If ac.AvaliadorPor = "" Then
+                    ac.AvaliadorPor = Before(ac.GerenteEmail, "@")
+                End If
+                If ac.Pontuacao Is Nothing Then
+                    ac.Pontuacao = New String("")
+                End If
+                If ac.Obs Is Nothing Then
+                    ac.Obs = New String("")
+                End If
+                If ac.Aprovado Is Nothing Then
+                    ac.Aprovado = New String("")
+                End If
+                save()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

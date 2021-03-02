@@ -37,44 +37,49 @@ Public Class NovoPlano
                         Next
                         newac.GerenteEmail = x10.Cells(3).Value
                         newac.Evidência = x10.Cells(4).Value
-                        newac.Prazo = x10.Cells(5).Value
                         newac.Status = "Previsto"
                         newac.Previsto = True
+                        newac.Inicio = x10.Cells(6).Value
+                        newac.Prazo = x10.Cells(7).Value
+                        newac.Aprovado = x10.Cells(8).Value
+                        newac.AvaliadorPor = x10.Cells(9).Value
+                        newac.Pontuacao = x10.Cells(10).Value
+                        newac.Obs = x10.Cells(11).Value
                         newpl.Ações.Add(newac)
                         Dim evidenciacaminho = newac.Evidência
-                        If IO.Directory.Exists(My.Settings.DatabaseLocation & "\" & Cliente.Text) Then
-                            Dim count As Integer = 0
-                            Dim fileNameOnly As String = IO.Path.GetFileNameWithoutExtension(evidenciacaminho)
-                            Dim extension As String = IO.Path.GetExtension(evidenciacaminho)
-                            Dim path As String = My.Settings.DatabaseLocation & "\" & Cliente.Text
-                            Dim newFullPath As String = My.Settings.DatabaseLocation & "\" & Cliente.Text & "\" & IO.Path.GetFileName(evidenciacaminho)
-                            While IO.File.Exists(newFullPath)
-                                Dim tempFileName As String = fileNameOnly & count + 1
-                                newFullPath = IO.Path.Combine(path, (tempFileName + extension))
-                                count = count + 1
-                            End While
-                            If IO.File.Exists(evidenciacaminho) Then
-                                IO.File.Copy(evidenciacaminho, newFullPath, True)
-                                newac.Evidência = newFullPath
-                            End If
-                        Else
-                            IO.Directory.CreateDirectory(My.Settings.DatabaseLocation & "\" & Cliente.Text)
-                            Dim count As Integer = 0
-                            Dim fileNameOnly As String = IO.Path.GetFileNameWithoutExtension(evidenciacaminho)
-                            Dim extension As String = IO.Path.GetExtension(evidenciacaminho)
-                            Dim path As String = My.Settings.DatabaseLocation & "\" & Cliente.Text
-                            Dim newFullPath As String = My.Settings.DatabaseLocation & "\" & Cliente.Text & "\" & IO.Path.GetFileName(evidenciacaminho)
-                            While IO.File.Exists(newFullPath)
-                                Dim tempFileName As String = fileNameOnly & count + 1
-                                newFullPath = IO.Path.Combine(path, (tempFileName + extension))
-                                count = count + 1
-                            End While
-                            If IO.File.Exists(evidenciacaminho) Then
-                                IO.File.Copy(evidenciacaminho, newFullPath, True)
-                                newac.Evidência = newFullPath
+                            If IO.Directory.Exists(My.Settings.DatabaseLocation & "\" & Cliente.Text) Then
+                                Dim count As Integer = 0
+                                Dim fileNameOnly As String = IO.Path.GetFileNameWithoutExtension(evidenciacaminho)
+                                Dim extension As String = IO.Path.GetExtension(evidenciacaminho)
+                                Dim path As String = My.Settings.DatabaseLocation & "\" & Cliente.Text
+                                Dim newFullPath As String = My.Settings.DatabaseLocation & "\" & Cliente.Text & "\" & IO.Path.GetFileName(evidenciacaminho)
+                                While IO.File.Exists(newFullPath)
+                                    Dim tempFileName As String = fileNameOnly & count + 1
+                                    newFullPath = IO.Path.Combine(path, (tempFileName + extension))
+                                    count = count + 1
+                                End While
+                                If IO.File.Exists(evidenciacaminho) Then
+                                    IO.File.Copy(evidenciacaminho, newFullPath, True)
+                                    newac.Evidência = newFullPath
+                                End If
+                            Else
+                                IO.Directory.CreateDirectory(My.Settings.DatabaseLocation & "\" & Cliente.Text)
+                                Dim count As Integer = 0
+                                Dim fileNameOnly As String = IO.Path.GetFileNameWithoutExtension(evidenciacaminho)
+                                Dim extension As String = IO.Path.GetExtension(evidenciacaminho)
+                                Dim path As String = My.Settings.DatabaseLocation & "\" & Cliente.Text
+                                Dim newFullPath As String = My.Settings.DatabaseLocation & "\" & Cliente.Text & "\" & IO.Path.GetFileName(evidenciacaminho)
+                                While IO.File.Exists(newFullPath)
+                                    Dim tempFileName As String = fileNameOnly & count + 1
+                                    newFullPath = IO.Path.Combine(path, (tempFileName + extension))
+                                    count = count + 1
+                                End While
+                                If IO.File.Exists(evidenciacaminho) Then
+                                    IO.File.Copy(evidenciacaminho, newFullPath, True)
+                                    newac.Evidência = newFullPath
+                                End If
                             End If
                         End If
-                    End If
                 Next
                 newpl.Inicio = Inicio.Text
                 newpl.Atualização = DateTime.Now.ToString("yyyy-MM-dd HH:mm tt")
@@ -149,6 +154,7 @@ Public Class NovoPlano
                 For Each x2 As PlanoDeAção In x1.Planos
                     If x2.Numero = selectaAlert Then
                         For Each ac As Ação In x2.Ações
+
                             Dim responsaveis As String = ""
                             If ac.Responsáveis Is Nothing Then
                                 ac.Responsáveis = New List(Of String)
@@ -164,30 +170,30 @@ Public Class NovoPlano
   </tr> 
   <tr>
     <td width = ""18%"" >Elaborador Por:<b> " & x1.user & "</td>
-     <td width = ""20%"" >Aprovador Por:<b>" & Before(ac.GerenteEmail, "@") & "</td>
+     <td width = ""20%"" >Avaliador Por:<b>" & ac.AvaliadorPor & "</td>
   </tr>
 </table>"
                             If ac.Atrasada Then
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação Criado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação Criado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                 If ac.Ação <> "" Then
                                     html1 = html1 & "<tr  bgcolor=""red""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
                                 End If
                             End If
                             If ac.Previsto Then
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação Criado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano De Ação Previsto:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação Criado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano De Ação Previsto:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                 If ac.Ação <> "" Then
                                     html1 = html1 & "<tr  bgcolor=""DodgerBlue""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
                                 End If
 
                             End If
                             If ac.EmExecução Then
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação Criado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de ação em Andamento:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação Criado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de ação em Andamento:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                 If ac.Ação <> "" Then
                                     html1 = html1 & "<tr  bgcolor=""Yellow""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
                                 End If
                             End If
                             If ac.concluida Then
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação Criado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de ação concluido:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação Criado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de ação concluido:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                 If ac.Ação <> "" Then
                                     html1 = html1 & "<tr  bgcolor=""Green""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
                                 End If

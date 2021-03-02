@@ -37,15 +37,8 @@ Partial Class PlanoControl
         Me.Inicio = New System.Windows.Forms.DateTimePicker()
         Me.seila = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ATualizado = New System.Windows.Forms.Label()
+        Me.Atualizado = New System.Windows.Forms.Label()
         Me.MetroGrid1 = New Wisder.W3Common.WMetroControl.Controls.MetroGrid()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroContextMenu1 = New Wisder.W3Common.WMetroControl.Controls.MetroContextMenu(Me.components)
         Me.DuplicarAçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MoverAcimaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,6 +49,18 @@ Partial Class PlanoControl
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Cliente = New Wisder.W3Common.WMetroControl.Controls.MetroComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroContextMenu1.SuspendLayout()
         Me.SuspendLayout()
@@ -63,27 +68,27 @@ Partial Class PlanoControl
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(4, 156)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(4, 181)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(122, 22)
+        Me.Label6.Size = New System.Drawing.Size(148, 24)
         Me.Label6.TabIndex = 48
         Me.Label6.Text = "Ações Corretiva:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(3, 124)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(154, 22)
+        Me.Label4.Size = New System.Drawing.Size(192, 24)
         Me.Label4.TabIndex = 45
         Me.Label4.Text = "Nome plano de ação:"
         '
         'NumeroPlano
         '
         Me.NumeroPlano.Lines = New String(-1) {}
-        Me.NumeroPlano.Location = New System.Drawing.Point(199, 123)
+        Me.NumeroPlano.Location = New System.Drawing.Point(199, 125)
         Me.NumeroPlano.MaxLength = 32767
         Me.NumeroPlano.Name = "NumeroPlano"
         Me.NumeroPlano.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -109,20 +114,20 @@ Partial Class PlanoControl
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(35, 94)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(78, 93)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 22)
+        Me.Label2.Size = New System.Drawing.Size(115, 24)
         Me.Label2.TabIndex = 42
         Me.Label2.Text = "Origem N.C:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(35, 51)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(116, 52)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 22)
+        Me.Label1.Size = New System.Drawing.Size(73, 24)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Cliente:"
         '
@@ -131,7 +136,7 @@ Partial Class PlanoControl
         Me.SalvarAlteracoes.BackColor = System.Drawing.Color.DodgerBlue
         Me.SalvarAlteracoes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.SalvarAlteracoes.Font = New System.Drawing.Font("Century", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SalvarAlteracoes.Location = New System.Drawing.Point(6, 467)
+        Me.SalvarAlteracoes.Location = New System.Drawing.Point(3, 576)
         Me.SalvarAlteracoes.Name = "SalvarAlteracoes"
         Me.SalvarAlteracoes.Size = New System.Drawing.Size(897, 45)
         Me.SalvarAlteracoes.TabIndex = 59
@@ -141,18 +146,18 @@ Partial Class PlanoControl
         'Inicio
         '
         Me.Inicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Inicio.Location = New System.Drawing.Point(78, 434)
+        Me.Inicio.Location = New System.Drawing.Point(69, 550)
         Me.Inicio.Name = "Inicio"
-        Me.Inicio.Size = New System.Drawing.Size(790, 20)
+        Me.Inicio.Size = New System.Drawing.Size(110, 20)
         Me.Inicio.TabIndex = 63
         '
         'seila
         '
         Me.seila.AutoSize = True
-        Me.seila.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.seila.Location = New System.Drawing.Point(4, 434)
+        Me.seila.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.seila.Location = New System.Drawing.Point(4, 546)
         Me.seila.Name = "seila"
-        Me.seila.Size = New System.Drawing.Size(49, 22)
+        Me.seila.Size = New System.Drawing.Size(59, 24)
         Me.seila.TabIndex = 62
         Me.seila.Text = "Inicio:"
         '
@@ -160,15 +165,15 @@ Partial Class PlanoControl
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'ATualizado
+        'Atualizado
         '
-        Me.ATualizado.AutoSize = True
-        Me.ATualizado.Font = New System.Drawing.Font("Caladea", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ATualizado.Location = New System.Drawing.Point(23, 21)
-        Me.ATualizado.Name = "ATualizado"
-        Me.ATualizado.Size = New System.Drawing.Size(212, 22)
-        Me.ATualizado.TabIndex = 66
-        Me.ATualizado.Text = "Plano de ação Atualizado"
+        Me.Atualizado.AutoSize = True
+        Me.Atualizado.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Atualizado.Location = New System.Drawing.Point(23, 21)
+        Me.Atualizado.Name = "Atualizado"
+        Me.Atualizado.Size = New System.Drawing.Size(223, 24)
+        Me.Atualizado.TabIndex = 66
+        Me.Atualizado.Text = "Plano de ação Atualizado"
         '
         'MetroGrid1
         '
@@ -186,7 +191,7 @@ Partial Class PlanoControl
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column6, Me.Column12, Me.Column5, Me.Column8, Me.Column9, Me.Column10, Me.Column11})
         Me.MetroGrid1.ContextMenuStrip = Me.MetroContextMenu1
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -199,7 +204,7 @@ Partial Class PlanoControl
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.MetroGrid1.Location = New System.Drawing.Point(6, 211)
+        Me.MetroGrid1.Location = New System.Drawing.Point(6, 226)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -212,8 +217,106 @@ Partial Class PlanoControl
         Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(677, 217)
+        Me.MetroGrid1.Size = New System.Drawing.Size(862, 217)
         Me.MetroGrid1.TabIndex = 67
+        '
+        'MetroContextMenu1
+        '
+        Me.MetroContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DuplicarAçãoToolStripMenuItem, Me.MoverAcimaToolStripMenuItem, Me.MoverAbaixoToolStripMenuItem})
+        Me.MetroContextMenu1.Name = "MetroContextMenu1"
+        Me.MetroContextMenu1.Size = New System.Drawing.Size(149, 70)
+        '
+        'DuplicarAçãoToolStripMenuItem
+        '
+        Me.DuplicarAçãoToolStripMenuItem.Image = CType(resources.GetObject("DuplicarAçãoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.DuplicarAçãoToolStripMenuItem.Name = "DuplicarAçãoToolStripMenuItem"
+        Me.DuplicarAçãoToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.DuplicarAçãoToolStripMenuItem.Text = "Duplicar Ação"
+        '
+        'MoverAcimaToolStripMenuItem
+        '
+        Me.MoverAcimaToolStripMenuItem.Image = CType(resources.GetObject("MoverAcimaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MoverAcimaToolStripMenuItem.Name = "MoverAcimaToolStripMenuItem"
+        Me.MoverAcimaToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.MoverAcimaToolStripMenuItem.Text = "Mover Acima"
+        '
+        'MoverAbaixoToolStripMenuItem
+        '
+        Me.MoverAbaixoToolStripMenuItem.Image = CType(resources.GetObject("MoverAbaixoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MoverAbaixoToolStripMenuItem.Name = "MoverAbaixoToolStripMenuItem"
+        Me.MoverAbaixoToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.MoverAbaixoToolStripMenuItem.Text = "Mover abaixo"
+        '
+        'addacao
+        '
+        Me.addacao.BackColor = System.Drawing.Color.DodgerBlue
+        Me.addacao.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.addacao.Font = New System.Drawing.Font("Century", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addacao.Location = New System.Drawing.Point(8, 465)
+        Me.addacao.Name = "addacao"
+        Me.addacao.Size = New System.Drawing.Size(190, 33)
+        Me.addacao.TabIndex = 68
+        Me.addacao.Text = "Adicionar Ação"
+        Me.addacao.UseVisualStyleBackColor = False
+        '
+        'EditarAcao
+        '
+        Me.EditarAcao.BackColor = System.Drawing.Color.DodgerBlue
+        Me.EditarAcao.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.EditarAcao.Font = New System.Drawing.Font("Century", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditarAcao.Location = New System.Drawing.Point(427, 466)
+        Me.EditarAcao.Name = "EditarAcao"
+        Me.EditarAcao.Size = New System.Drawing.Size(190, 32)
+        Me.EditarAcao.TabIndex = 74
+        Me.EditarAcao.Text = "Editar ação selecionada"
+        Me.EditarAcao.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button3.Font = New System.Drawing.Font("Century", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(222, 466)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(190, 32)
+        Me.Button3.TabIndex = 75
+        Me.Button3.Text = "Abrir Evidência "
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button2.Font = New System.Drawing.Font("Century", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(675, 164)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(190, 56)
+        Me.Button2.TabIndex = 85
+        Me.Button2.Text = "Gerar Relatório dos planos"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Cliente
+        '
+        Me.Cliente.FormattingEnabled = True
+        Me.Cliente.ItemHeight = 23
+        Me.Cliente.Location = New System.Drawing.Point(199, 52)
+        Me.Cliente.Name = "Cliente"
+        Me.Cliente.Size = New System.Drawing.Size(669, 29)
+        Me.Cliente.TabIndex = 86
+        Me.Cliente.UseSelectable = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(4, 515)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(665, 20)
+        Me.Label3.TabIndex = 88
+        Me.Label3.Text = "Para remover uma ação é necessário ir ate histórico de planos e mover para lista " &
+    "de excluidos"
         '
         'Column7
         '
@@ -252,6 +355,18 @@ Partial Class PlanoControl
         Me.Column4.ReadOnly = True
         Me.Column4.Width = 78
         '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Status"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = "Inicio"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        '
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -260,109 +375,29 @@ Partial Class PlanoControl
         Me.Column5.ReadOnly = True
         Me.Column5.Width = 58
         '
-        'Column6
+        'Column8
         '
-        Me.Column6.HeaderText = "Status"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
+        Me.Column8.HeaderText = "Aprovado"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
         '
-        'MetroContextMenu1
+        'Column9
         '
-        Me.MetroContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DuplicarAçãoToolStripMenuItem, Me.MoverAcimaToolStripMenuItem, Me.MoverAbaixoToolStripMenuItem})
-        Me.MetroContextMenu1.Name = "MetroContextMenu1"
-        Me.MetroContextMenu1.Size = New System.Drawing.Size(149, 70)
+        Me.Column9.HeaderText = "Aprovado Por"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
         '
-        'DuplicarAçãoToolStripMenuItem
+        'Column10
         '
-        Me.DuplicarAçãoToolStripMenuItem.Image = CType(resources.GetObject("DuplicarAçãoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.DuplicarAçãoToolStripMenuItem.Name = "DuplicarAçãoToolStripMenuItem"
-        Me.DuplicarAçãoToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
-        Me.DuplicarAçãoToolStripMenuItem.Text = "Duplicar Ação"
+        Me.Column10.HeaderText = "Pontuacao"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
         '
-        'MoverAcimaToolStripMenuItem
+        'Column11
         '
-        Me.MoverAcimaToolStripMenuItem.Image = CType(resources.GetObject("MoverAcimaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.MoverAcimaToolStripMenuItem.Name = "MoverAcimaToolStripMenuItem"
-        Me.MoverAcimaToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
-        Me.MoverAcimaToolStripMenuItem.Text = "Mover Acima"
-        '
-        'MoverAbaixoToolStripMenuItem
-        '
-        Me.MoverAbaixoToolStripMenuItem.Image = CType(resources.GetObject("MoverAbaixoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.MoverAbaixoToolStripMenuItem.Name = "MoverAbaixoToolStripMenuItem"
-        Me.MoverAbaixoToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
-        Me.MoverAbaixoToolStripMenuItem.Text = "Mover abaixo"
-        '
-        'addacao
-        '
-        Me.addacao.BackColor = System.Drawing.Color.DodgerBlue
-        Me.addacao.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.addacao.Font = New System.Drawing.Font("Century", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addacao.Location = New System.Drawing.Point(689, 284)
-        Me.addacao.Name = "addacao"
-        Me.addacao.Size = New System.Drawing.Size(190, 33)
-        Me.addacao.TabIndex = 68
-        Me.addacao.Text = "Adicionar Ação"
-        Me.addacao.UseVisualStyleBackColor = False
-        '
-        'EditarAcao
-        '
-        Me.EditarAcao.BackColor = System.Drawing.Color.DodgerBlue
-        Me.EditarAcao.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.EditarAcao.Font = New System.Drawing.Font("Century", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EditarAcao.Location = New System.Drawing.Point(692, 336)
-        Me.EditarAcao.Name = "EditarAcao"
-        Me.EditarAcao.Size = New System.Drawing.Size(190, 32)
-        Me.EditarAcao.TabIndex = 74
-        Me.EditarAcao.Text = "Editar ação selecionada"
-        Me.EditarAcao.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button3.Font = New System.Drawing.Font("Century", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(689, 384)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(190, 32)
-        Me.Button3.TabIndex = 75
-        Me.Button3.Text = "Abrir Evidência "
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button2.Font = New System.Drawing.Font("Century", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(692, 211)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(190, 56)
-        Me.Button2.TabIndex = 85
-        Me.Button2.Text = "Gerar Relatório dos planos"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Cliente
-        '
-        Me.Cliente.FormattingEnabled = True
-        Me.Cliente.ItemHeight = 23
-        Me.Cliente.Location = New System.Drawing.Point(199, 51)
-        Me.Cliente.Name = "Cliente"
-        Me.Cliente.Size = New System.Drawing.Size(669, 29)
-        Me.Cliente.TabIndex = 86
-        Me.Cliente.UseSelectable = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Caladea", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(4, 178)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(629, 19)
-        Me.Label3.TabIndex = 88
-        Me.Label3.Text = "Para remover uma ação é necessário ir ate histórico de planos e mover para lista " &
-    "de excluidos"
+        Me.Column11.HeaderText = "Obs"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
         '
         'PlanoControl
         '
@@ -376,7 +411,7 @@ Partial Class PlanoControl
         Me.Controls.Add(Me.EditarAcao)
         Me.Controls.Add(Me.addacao)
         Me.Controls.Add(Me.MetroGrid1)
-        Me.Controls.Add(Me.ATualizado)
+        Me.Controls.Add(Me.Atualizado)
         Me.Controls.Add(Me.Inicio)
         Me.Controls.Add(Me.seila)
         Me.Controls.Add(Me.SalvarAlteracoes)
@@ -387,7 +422,7 @@ Partial Class PlanoControl
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "PlanoControl"
-        Me.Size = New System.Drawing.Size(903, 513)
+        Me.Size = New System.Drawing.Size(903, 624)
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MetroContextMenu1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -404,7 +439,7 @@ Partial Class PlanoControl
     Public WithEvents Inicio As DateTimePicker
     Friend WithEvents seila As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Public WithEvents ATualizado As Label
+    Public WithEvents Atualizado As Label
     Public WithEvents MetroGrid1 As Wisder.W3Common.WMetroControl.Controls.MetroGrid
     Public WithEvents addacao As Button
     Public WithEvents EditarAcao As Button
@@ -412,15 +447,20 @@ Partial Class PlanoControl
     Friend WithEvents Button2 As Button
     Friend WithEvents Cliente As Wisder.W3Common.WMetroControl.Controls.MetroComboBox
     Public WithEvents Label3 As Label
+    Friend WithEvents MetroContextMenu1 As Wisder.W3Common.WMetroControl.Controls.MetroContextMenu
+    Friend WithEvents DuplicarAçãoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MoverAcimaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MoverAbaixoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents MetroContextMenu1 As Wisder.W3Common.WMetroControl.Controls.MetroContextMenu
-    Friend WithEvents DuplicarAçãoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MoverAcimaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MoverAbaixoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
 End Class

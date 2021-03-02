@@ -72,7 +72,6 @@ Public Class Configurações
             AposDiretor.Checked = Form1.database.Enviargerente1aviso
             Aposutlimoresponsavel.Checked = Form1.database.Enviarresponsávelultimoaviso
             AposUltimoDiretor.Checked = Form1.database.Enviargerenteultimoaviso
-            CurrentVersion.Text = String.Format("Planos de ação bepo - v{0}", ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4))
 
         Catch ex As Exception
 

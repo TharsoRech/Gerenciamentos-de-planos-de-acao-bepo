@@ -27,9 +27,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\Setup\</UpdateUrl>
+    <UpdateUrl>\\192.168.1.23\PlanosDeAcao\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\Setup\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.43</MinimumRequiredVersion>
-    <ApplicationRevision>50</ApplicationRevision>
+    <ApplicationRevision>53</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

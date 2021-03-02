@@ -23,26 +23,31 @@ Public Class PlanoControl
                                 Next
                                 newac.GerenteEmail = x10.Cells(3).Value
                                 newac.Evidência = x10.Cells(4).Value
-                                newac.Prazo = x10.Cells(5).Value
-                                If x10.Cells(6).Value = "Previsto" Then
+                                newac.Inicio = x10.Cells(6).Value
+                                newac.Prazo = x10.Cells(7).Value
+                                newac.Aprovado = x10.Cells(8).Value
+                                newac.AvaliadorPor = x10.Cells(9).Value
+                                newac.Pontuacao = x10.Cells(10).Value
+                                newac.Obs = x10.Cells(11).Value
+                                If x10.Cells(5).Value = "Previsto" Then
                                     newac.Previsto = True
                                     newac.Status = "Previsto"
                                 Else
                                     newac.Previsto = False
                                 End If
-                                If x10.Cells(6).Value = "Execução" Then
+                                If x10.Cells(5).Value = "Execução" Then
                                     newac.EmExecução = True
                                     newac.Status = "Execução"
                                 Else
                                     newac.EmExecução = False
                                 End If
-                                If x10.Cells(6).Value = "Atrasado" Then
+                                If x10.Cells(5).Value = "Atrasado" Then
                                     newac.Atrasada = True
                                     newac.Status = "Atrasado"
                                 Else
                                     newac.Atrasada = False
                                 End If
-                                If x10.Cells(6).Value = "Concluido" Then
+                                If x10.Cells(5).Value = "Concluido" Then
                                     newac.concluida = True
                                     newac.Status = "Concluido"
                                 Else
@@ -138,41 +143,41 @@ Public Class PlanoControl
                                 Form1.database.Alertas.Add(newl)
                                 Form1.save()
                             End If
-                            Dim teste1 As String = "<table style=""width:100%"" border=""1"" cellspacing=""2""><tr><th>Plano de ação</th></tr></table><table style = ""width:100%"" border=""1"" cellspacing=""2""><tr>
+                            If Form1.templist.Count > 0 Then
+                                Dim teste1 As String = "<table style=""width:100%"" border=""1"" cellspacing=""2""><tr><th>Plano de ação</th></tr></table><table style = ""width:100%"" border=""1"" cellspacing=""2""><tr>
     <td width = ""18%"" >Empresa :<b> Bepo</td>
      <td width = ""20%"" >Data Atualização:<b>" & x2.Atualização & ",Pelo usuário:" & x2.AlteradorPor & "</td>
   </tr> 
   <tr>
     <td width = ""18%"" >Elaborador Por:<b> " & x1.user & "</td>
-     <td width = ""20%"" >Aprovador Por:<b>" & Before(ac.GerenteEmail, "@") & "</td>
+     <td width = ""20%"" >Avaliador Por:<b>" & ac.AvaliadorPor & "</td>
   </tr>
 </table>"
-                            If ac.Atrasada Then
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação atualizado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
-                                If ac.Ação <> "" Then
-                                    html1 = html1 & "<tr  bgcolor=""red""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
+                                If ac.Atrasada Then
+                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação atualizado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
+                                    If ac.Ação <> "" Then
+                                        html1 = html1 & "<tr  bgcolor=""red""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
+                                    End If
                                 End If
-                            End If
-                            If ac.Previsto Then
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação atualizado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano De Ação Previsto:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
-                                If ac.Ação <> "" Then
-                                    html1 = html1 & "<tr  bgcolor=""DodgerBlue""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
-                                End If
+                                If ac.Previsto Then
+                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação atualizado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano De Ação Previsto:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
+                                    If ac.Ação <> "" Then
+                                        html1 = html1 & "<tr  bgcolor=""DodgerBlue""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
+                                    End If
 
-                            End If
-                            If ac.EmExecução Then
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação atualizado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de ação em Andamento:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
-                                If ac.Ação <> "" Then
-                                    html1 = html1 & "<tr  bgcolor=""Yellow""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
                                 End If
-                            End If
-                            If ac.concluida Then
-                                html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação atualizado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de ação concluido:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
-                                If ac.Ação <> "" Then
-                                    html1 = html1 & "<tr  bgcolor=""Green""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
+                                If ac.EmExecução Then
+                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação atualizado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de ação em Andamento:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
+                                    If ac.Ação <> "" Then
+                                        html1 = html1 & "<tr  bgcolor=""Yellow""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
+                                    End If
                                 End If
-                            End If
-                            If Form1.templist.Count > 0 Then
+                                If ac.concluida Then
+                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><div><font color=""red"">Atenção plano de ação atualizado:</font><div><strong>Esse email é enviado automaticamente para alerta e avisos de planos de ações,por favor não responda esse email.</strong><body><p align=""center"" style = ""font-size:36px"">Plano de ação concluido:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
+                                    If ac.Ação <> "" Then
+                                        html1 = html1 & "<tr  bgcolor=""Green""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr>"
+                                    End If
+                                End If
                                 For Each action As Ação In Form1.templist
                                     If action.NãoConformidadeFalha = ac.NãoConformidadeFalha And action.Ação = ac.Ação Then
                                         If Form1.sendmessage(html1, ac.Responsáveis, ac.GerenteEmail, True, False) Then
@@ -249,8 +254,21 @@ Public Class PlanoControl
             Next
             Addaction.GerenteEmail.Text = MetroGrid1.SelectedRows(0).Cells(3).Value.ToString
             Addaction.Evidencia.Text = MetroGrid1.SelectedRows(0).Cells(4).Value.ToString
-            Addaction.Prazo.Text = MetroGrid1.SelectedRows(0).Cells(5).Value.ToString
-            Addaction.Status.Text = MetroGrid1.SelectedRows(0).Cells(6).Value.ToString
+            Addaction.Inicio.Text = MetroGrid1.SelectedRows(0).Cells(6).Value.ToString
+            Addaction.Status.Text = MetroGrid1.SelectedRows(0).Cells(5).Value.ToString
+            Addaction.Prazo.Text = MetroGrid1.SelectedRows(0).Cells(7).Value.ToString
+            Dim Aprovadoo As String = temvalor(MetroGrid1.SelectedRows(0).Cells(8).Value).ToLower
+            If Aprovadoo = "Sim".ToLower Then
+                Addaction.Sim.Checked = True
+            End If
+            If Aprovadoo = "Não".ToLower Then
+                Addaction.Nao.Checked = True
+                Addaction.Obs.Text = MetroGrid1.SelectedRows(0).Cells(11).Value.ToString
+            End If
+            Addaction.AvaliadoPor.Text = temvalor(MetroGrid1.SelectedRows(0).Cells(9).Value)
+            Addaction.Pontuacao.Text = temvalor(MetroGrid1.SelectedRows(0).Cells(10).Value)
+
+
             Addaction.addacao.Text = "Atualizar Ação"
             Addaction.Show()
         Catch ex As Exception
@@ -293,15 +311,38 @@ Public Class PlanoControl
             Addaction.Acao.Text = MetroGrid1.SelectedRows(0).Cells(1).Value.ToString
             Addaction.GerenteEmail.Text = MetroGrid1.SelectedRows(0).Cells(3).Value.ToString
             Addaction.Evidencia.Text = MetroGrid1.SelectedRows(0).Cells(4).Value.ToString
-            Addaction.Prazo.Text = MetroGrid1.SelectedRows(0).Cells(5).Value.ToString
-            Addaction.Status.Text = MetroGrid1.SelectedRows(0).Cells(6).Value.ToString
+            Addaction.Inicio.Text = MetroGrid1.SelectedRows(0).Cells(6).Value.ToString
+            Addaction.Status.Text = MetroGrid1.SelectedRows(0).Cells(5).Value.ToString
+            Addaction.Prazo.Text = MetroGrid1.SelectedRows(0).Cells(7).Value.ToString
+            Dim Aprovadoo As String = temvalor(MetroGrid1.SelectedRows(0).Cells(8).Value).ToLower
+            If Aprovadoo = "Sim".ToLower Then
+                    Addaction.Sim.Checked = True
+                End If
+            If Aprovadoo = "Não".ToLower Then
+                Addaction.Nao.Checked = True
+                Addaction.Obs.Text = MetroGrid1.SelectedRows(0).Cells(11).Value.ToString
+            End If
+            Addaction.AvaliadoPor.Text = temvalor(MetroGrid1.SelectedRows(0).Cells(9).Value)
+            Addaction.Pontuacao.Text = temvalor(MetroGrid1.SelectedRows(0).Cells(10).Value)
+
             Addaction.addacao.Text = "Atualizar Ação"
             Addaction.Show()
         Catch ex As Exception
 
         End Try
     End Sub
-
+    Public Function temvalor(ByVal objeto As Object) As String
+        Dim valor As String = ""
+        Try
+            If objeto IsNot Nothing Then
+                valor = objeto.ToString
+                Return valor
+            End If
+            Return valor
+        Catch ex As Exception
+            Return valor
+        End Try
+    End Function
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
             SelecionarRelatorio.Show()

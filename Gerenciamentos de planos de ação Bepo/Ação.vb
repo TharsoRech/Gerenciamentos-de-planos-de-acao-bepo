@@ -6,6 +6,9 @@ Public Class Ação
     Public Número As String = ""
     Public Inicio As String = ""
     Public Alteradopor As String = ""
+    Public AvaliadorPor As String = ""
+    Public Obs As String = ""
+    Public Pontuacao As String = ""
     Public atualização As String = ""
     Public GerenteEmail As String = ""
     Public Evidência As String = ""
@@ -18,6 +21,7 @@ Public Class Ação
     Public Atrasada As Boolean = False
     Public EmExecução As Boolean = False
     Public concluida As Boolean = False
+    Public Aprovado As String = ""
     Public Emviadoconcluido As Boolean = False
     Public Responsáveis As New List(Of String)
 End Class

@@ -13,8 +13,15 @@ Public Class Addaction
     End Sub
 
     Private Sub addacao_Click(sender As Object, e As EventArgs) Handles addacao.Click
+
         Try
             If Gridtoadd IsNot Nothing Then
+                Dim Aprove As String = ""
+                If Sim.Checked = True Then
+                    Aprove = "Sim"
+                Else
+                    Aprove = "Não"
+                End If
                 Dim Responsavelemai As String = ""
                 For Each x3 As TreeNode In TreeView1.Nodes
                     Responsavelemai = Responsavelemai & x3.Text & ";"
@@ -30,8 +37,13 @@ Public Class Addaction
                         Selectrow1.Cells(2).Value = Responsavelemai
                         Selectrow1.Cells(3).Value = GerenteEmail.Text
                         Selectrow1.Cells(4).Value = Evidencia.Text
-                        Selectrow1.Cells(5).Value = Prazo.Text
-                        Selectrow1.Cells(6).Value = Status.Text
+                        Selectrow1.Cells(5).Value = Status.Text
+                        Selectrow1.Cells(6).Value = Inicio.Text
+                        Selectrow1.Cells(7).Value = Prazo.Text
+                        Selectrow1.Cells(8).Value = Aprove
+                        Selectrow1.Cells(9).Value = AvaliadoPor.Text
+                        Selectrow1.Cells(10).Value = Pontuacao.Text
+                        Selectrow1.Cells(11).Value = Obs.Text
                         Me.Close()
                     Else
                         MetroMessageBox.Show(Me, "Erro ao atualizar ação,Parece estar faltando alguma informação,ou alguma informação está errada", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -42,7 +54,7 @@ Public Class Addaction
                         newaction.NãoConformidadeFalha = Falha.Text
                         newaction.Ação = Acao.Text
                         Form1.templist.Add(newaction)
-                        Gridtoadd.Rows.Add({Falha.Text, Acao.Text, Responsavelemai, GerenteEmail.Text, Evidencia.Text, Prazo.Text, Status.Text})
+                        Gridtoadd.Rows.Add({Falha.Text, Acao.Text, Responsavelemai, GerenteEmail.Text, Evidencia.Text, Status.Text, Inicio.Text, Prazo.Text, Aprove, AvaliadoPor.Text, Pontuacao.Text, Obs.Text})
                         Me.Close()
                     Else
                         MetroMessageBox.Show(Me, "Erro ao adicionar nova ação ,Parece estar faltando alguma informação,ou alguma informação está errada", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -50,22 +62,22 @@ Public Class Addaction
 
                 End If
                 For i = 0 To Gridtoadd.Rows.Count - 1
-                    If Gridtoadd.Rows(i).Cells(6).Value = "Previsto" Then
+                    If Gridtoadd.Rows(i).Cells(5).Value = "Previsto" Then
                         Gridtoadd.Rows(i).DefaultCellStyle.BackColor = Color.DodgerBlue
                         Gridtoadd.Rows(i).DefaultCellStyle.ForeColor = Color.Black
                         Gridtoadd.Rows(i).DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
                     End If
-                    If Gridtoadd.Rows(i).Cells(6).Value = "Execução" Then
+                    If Gridtoadd.Rows(i).Cells(5).Value = "Execução" Then
                         Gridtoadd.Rows(i).DefaultCellStyle.BackColor = Color.Gold
                         Gridtoadd.Rows(i).DefaultCellStyle.ForeColor = Color.Black
                         Gridtoadd.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Gold
                     End If
-                    If Gridtoadd.Rows(i).Cells(6).Value = "Atrasado" Then
+                    If Gridtoadd.Rows(i).Cells(5).Value = "Atrasado" Then
                         Gridtoadd.Rows(i).DefaultCellStyle.BackColor = Color.Red
                         Gridtoadd.Rows(i).DefaultCellStyle.ForeColor = Color.Black
                         Gridtoadd.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Red
                     End If
-                    If Gridtoadd.Rows(i).Cells(6).Value = "Concluido" Then
+                    If Gridtoadd.Rows(i).Cells(5).Value = "Concluido" Then
                         Gridtoadd.Rows(i).DefaultCellStyle.BackColor = Color.Green
                         Gridtoadd.Rows(i).DefaultCellStyle.ForeColor = Color.Black
                         Gridtoadd.Rows(i).DefaultCellStyle.SelectionBackColor = Color.Green
@@ -125,6 +137,7 @@ Public Class Addaction
                 For Each x2 As PlanoDeAção In x1.Planos
                     If x2.Numero.ToLower = numeroplanodeacao.ToLower Then
                         For Each ac As Ação In x2.Ações
+                            ChecarAvaliador(ac)
                             Dim responsaveis As String = ""
                             If ac.Responsáveis Is Nothing Then
                                 ac.Responsáveis = New List(Of String)
@@ -141,33 +154,36 @@ Public Class Addaction
   </tr> 
   <tr>
     <td width = ""18%"" >Elaborador Por:<b> " & x1.user & "</td>
-     <td width = ""20%"" >Aprovador Por:<b>" & Before(ac.GerenteEmail, "@") & "</td>
+     <td width = ""20%"" >Avaliador Por:<b>" & ac.AvaliadorPor & "</td>
   </tr>
 </table>"
 
                                 If ac.Previsto Then
-                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><body><p align=""center"" style = ""font-size:36px"">Plano De Ação Previsto:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><body><p align=""center"" style = ""font-size:36px"">Plano De Ação Previsto:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                     If ac.Ação <> "" Then
-                                        html1 = html1 & "<tr  bgcolor=""DodgerBlue""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr></table><br>"
+                                        html1 = html1 & "<tr  bgcolor=""DodgerBlue""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Aprovado & "</th><th>" & ac.Obs & "</th><th>" & ac.Pontuacao & "</th><th>" & ac.Evidência & "</th></tr></table><br>"
+                                        html1 = Form1.Checarvaloresnulos(ac, html1)
                                     End If
-
                                 End If
                                 If ac.EmExecução Then
-                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><body><p align=""center"" style = ""font-size:36px"">Plano de ação em Andamento:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><body><p align=""center"" style = ""font-size:36px"">Plano de ação em Andamento:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                     If ac.Ação <> "" Then
-                                        html1 = html1 & "<tr  bgcolor=""Yellow""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr></table><br>"
+                                        html1 = html1 & "<tr  bgcolor=""Yellow""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Aprovado & "</th><th>" & ac.Obs & "</th><th>" & ac.Pontuacao & "</th><th>" & ac.Evidência & "</th></tr></table><br>"
+                                        html1 = Form1.Checarvaloresnulos(ac, html1)
                                     End If
                                 End If
                                 If ac.Atrasada Then
-                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><body><p align=""center"" style = ""font-size:36px"">Plano de Ação Atrasado:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                     If ac.Ação <> "" Then
-                                        html1 = html1 & "<tr  bgcolor=""red""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr></table><br>"
+                                        html1 = html1 & "<tr  bgcolor=""red""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Aprovado & "</th><th>" & ac.Obs & "</th><th>" & ac.Pontuacao & "</th><th>" & ac.Evidência & "</th></tr></table><br>"
+                                        html1 = Form1.Checarvaloresnulos(ac, html1)
                                     End If
                                 End If
                                 If ac.concluida Then
-                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><body><p align=""center"" style = ""font-size:36px"">Plano de ação concluido:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio</th><th>Prazo</th><th>Status</th><th>Evidência</th></tr>"
+                                    html1 = "<html><meta http-equiv=""Content-type"" content=""text/html;charset=UTF-8""><body><p align=""center"" style = ""font-size:36px"">Plano de ação concluido:</p>" & teste1 & "<table style = ""width:100%""   border=""1"" cellspacing=""2""  >" & "<tr><th>Cliente</th><th>Origem</th><th>Nome Plano de ação</th><th>Não conformidade/Falha</th><th>Ação corretiva</th><th>Responsáveis</th><th>Coordenador/Gerente</th><th>Inicio/Data da Sugestão</th><th>Prazo</th><th>Status</th><th>Aprovado</th><th>Obs</th><th>Pontuação</th><th>Evidência</th></tr>"
                                     If ac.Ação <> "" Then
-                                        html1 = html1 & "<tr  bgcolor=""Green""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Evidência & "</th></tr></table><br>"
+                                        html1 = html1 & "<tr  bgcolor=""Green""> <th>" & x2.Cliente & "</th>" & "<th>" & x2.Origem & "</th>" & "<th>" & x2.Numero & "</th>" & "<th>" & ac.NãoConformidadeFalha & "</th>" & "<th>" & ac.Ação & "<th>" & responsaveis & "</th>" & "<th>" & Before(ac.GerenteEmail, "@") & "</th><th>" & x2.Inicio & "</th><th>" & ac.Prazo & "</th><th>" & ac.Status & "</th><th>" & ac.Aprovado & "</th><th>" & ac.Obs & "</th><th>" & ac.Pontuacao & "</th><th>" & ac.Evidência & "</th></tr></table><br>"
+                                        html1 = Form1.Checarvaloresnulos(ac, html1)
                                     End If
                                 End If
                                 VisualizarPlano.Show()
@@ -195,6 +211,30 @@ Public Class Addaction
             Return value1
         End Try
     End Function
+    Public Sub ChecarAvaliador(ac As Ação)
+        Try
+            If ac.AvaliadorPor Is Nothing Then
+                If ac.AvaliadorPor Is Nothing Then
+                    ac.AvaliadorPor = New String("")
+                End If
+                If ac.AvaliadorPor = "" Then
+                    ac.AvaliadorPor = Before(ac.GerenteEmail, "@")
+                End If
+                If ac.Pontuacao Is Nothing Then
+                    ac.Pontuacao = New String("")
+                End If
+                If ac.Obs Is Nothing Then
+                    ac.Obs = New String("")
+                End If
+                If ac.Aprovado Is Nothing Then
+                    ac.Aprovado = New String("")
+                End If
+                Form1.save()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Try
@@ -233,6 +273,48 @@ Public Class Addaction
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Try
             TreeView1.Nodes.Clear()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Sim_CheckedChanged(sender As Object, e As EventArgs) Handles Sim.CheckedChanged
+        Try
+            If Sim.Checked = True Then
+                Nao.Checked = False
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Nao_CheckedChanged(sender As Object, e As EventArgs) Handles Nao.CheckedChanged
+        Try
+            If Nao.Checked = True Then
+                Sim.Checked = False
+                Motivosabaixo.Visible = True
+                Obs.Visible = True
+            Else
+                Motivosabaixo.Visible = False
+                Obs.Visible = False
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
+        Try
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
+        Try
+            Evidencia.ReadOnly = False
         Catch ex As Exception
 
         End Try

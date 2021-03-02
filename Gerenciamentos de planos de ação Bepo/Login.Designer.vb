@@ -94,20 +94,20 @@ Partial Class Login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(106, 226)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 22)
+        Me.Label1.Size = New System.Drawing.Size(79, 24)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Usuário:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(106, 292)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 22)
+        Me.Label2.Size = New System.Drawing.Size(70, 24)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Senha:"
         '
@@ -124,13 +124,13 @@ Partial Class Login
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Gentium Basic", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(19, 135)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(753, 22)
+        Me.Label4.Size = New System.Drawing.Size(719, 48)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Faça login abaixo com seu usuário e sua senha,caso não tenha ou tenha esquecido c" &
-    "ontate ao administrador"
+        Me.Label4.Text = "Faça login abaixo com seu usuário e sua senha,caso não tenha ou tenha esquecido" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
+    "contate ao administrador."
         '
         'Button3
         '

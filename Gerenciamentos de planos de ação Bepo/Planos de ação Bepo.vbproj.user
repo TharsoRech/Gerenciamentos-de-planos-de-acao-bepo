@@ -5,7 +5,7 @@
     <PublishUrlHistory>Setup\|publish\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
-    <UpdateUrlHistory>\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\Setup\</UpdateUrlHistory>
+    <UpdateUrlHistory>\\192.168.1.23\PlanosDeAcao\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\Setup\|\\vmsmd37\PlanosDeAção\Gerenciamentos de planos de ação Bepo\Gerenciamentos de planos de ação Bepo\Setup\</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>

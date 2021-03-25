@@ -244,7 +244,6 @@ Public Class Addaction
 
             valorRetornado = InputBox(Prompt, Titulo)
             If valorRetornado = "" Then
-                MetroMessageBox.Show(Me, "Cliente não pode ser em branco", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
             Dim alreadyhave As Boolean = False
@@ -262,7 +261,7 @@ Public Class Addaction
         End Try
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
         Try
             TreeView1.Nodes.Remove(TreeView1.SelectedNode)
         Catch ex As Exception
@@ -270,7 +269,7 @@ Public Class Addaction
         End Try
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         Try
             TreeView1.Nodes.Clear()
         Catch ex As Exception
@@ -304,13 +303,7 @@ Public Class Addaction
         End Try
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs)
-        Try
 
-        Catch ex As Exception
-
-        End Try
-    End Sub
 
     Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
         Try
@@ -319,4 +312,6 @@ Public Class Addaction
 
         End Try
     End Sub
+
+
 End Class

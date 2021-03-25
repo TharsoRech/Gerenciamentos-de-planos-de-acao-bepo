@@ -24,24 +24,8 @@ Public Class Form1
                 My.Settings.Save()
             End If
             If IO.File.Exists(folderdatabase & "Database.Gpab") Then
-                Dim infoReader As System.IO.FileInfo
-                infoReader = My.Computer.FileSystem.GetFileInfo(folderdatabase & "Database.Gpab")
-                Dim sizeInBytes As Long = infoReader.Length
-                If IO.File.Exists(folderdatabase & "DatabaseBKP.Gpab") Then
-                    Dim infoReader1 As System.IO.FileInfo
-                    infoReader1 = My.Computer.FileSystem.GetFileInfo(folderdatabase & "DatabaseBKP.Gpab")
-                    Dim sizeInBytes1 As Long = infoReader1.Length
-                    If sizeInBytes = 0 Then
-                        IO.File.Delete(folderdatabase & "Database.Gpab")
-                        IO.File.Copy(folderdatabase & "DatabaseBKP.Gpab", folderdatabase & "Database.Gpab", True)
-                        Application.Restart()
-                    End If
-                End If
-            End If
-            If IO.File.Exists(folderdatabase & "Database.Gpab") Then
                 Dim seri As New ObjectSerializer(Of Database)
                 database = seri.GetSerializedObject(folderdatabase & "Database.Gpab")
-                save()
             Else
                 IO.File.Create(folderdatabase & "Database.Gpab").Close()
                 database = New Database
@@ -61,9 +45,9 @@ Public Class Form1
                     IO.File.Create(folderdatabase & "DatabaseBKP.Gpab").Close()
                     Dim seri As New ObjectSerializer(Of Database)
                     seri.SaveSerializedObject(database, folderdatabase & "DatabaseBKP.Gpab")
-                Else
-                    Dim seri As New ObjectSerializer(Of Database)
-                    seri.SaveSerializedObject(database, folderdatabase & "DatabaseBKP.Gpab")
+                    ' Else
+                    'Dim seri As New ObjectSerializer(Of Database)
+                    ' seri.SaveSerializedObject(database, folderdatabase & "DatabaseBKP.Gpab")
                 End If
                 If My.Application.CommandLineArgs.Count > 0 Then
                     Me.Hide()
@@ -589,28 +573,5 @@ Public Class Form1
         End Try
     End Function
 
-    Public Sub ChecarAvaliador(ac As Ação)
-        Try
-            If ac.AvaliadorPor Is Nothing Then
-                If ac.AvaliadorPor Is Nothing Then
-                    ac.AvaliadorPor = New String("")
-                End If
-                If ac.AvaliadorPor = "" Then
-                    ac.AvaliadorPor = Before(ac.GerenteEmail, "@")
-                End If
-                If ac.Pontuacao Is Nothing Then
-                    ac.Pontuacao = New String("")
-                End If
-                If ac.Obs Is Nothing Then
-                    ac.Obs = New String("")
-                End If
-                If ac.Aprovado Is Nothing Then
-                    ac.Aprovado = New String("")
-                End If
-                save()
-            End If
-        Catch ex As Exception
 
-        End Try
-    End Sub
 End Class

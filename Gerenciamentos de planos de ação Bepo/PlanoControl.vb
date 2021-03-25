@@ -17,9 +17,7 @@ Public Class PlanoControl
                                     newac.Responsáveis = New List(Of String)
                                 End If
                                 For Each word In words
-                                    If word.Contains("@") Then
-                                        newac.Responsáveis.Add(word)
-                                    End If
+                                    newac.Responsáveis.Add(word)
                                 Next
                                 newac.GerenteEmail = x10.Cells(3).Value
                                 newac.Evidência = x10.Cells(4).Value
@@ -54,41 +52,43 @@ Public Class PlanoControl
                                     newac.concluida = False
                                 End If
                                 Dim evidenciacaminho = newac.Evidência
-                                If IO.Directory.Exists(My.Settings.DatabaseLocation & "\" & Cliente.Text) Then
-                                    Dim count As Integer = 0
-                                    Dim fileNameOnly As String = IO.Path.GetFileNameWithoutExtension(evidenciacaminho)
-                                    Dim extension As String = IO.Path.GetExtension(evidenciacaminho)
-                                    Dim path As String = My.Settings.DatabaseLocation & "\" & Cliente.Text
-                                    Dim newFullPath As String = My.Settings.DatabaseLocation & "\" & Cliente.Text & "\" & IO.Path.GetFileName(evidenciacaminho)
-                                    While IO.File.Exists(newFullPath)
-                                        Dim tempFileName As String = fileNameOnly & count + 1
-                                        newFullPath = IO.Path.Combine(path, (tempFileName + extension))
-                                        count = count + 1
-                                    End While
-                                    If IO.File.Exists(evidenciacaminho) Then
-                                        IO.File.Copy(evidenciacaminho, newFullPath, True)
-                                        newac.Evidência = newFullPath
-                                    End If
-                                Else
-                                    IO.Directory.CreateDirectory(My.Settings.DatabaseLocation & "\" & Cliente.Text)
-                                    Dim count As Integer = 0
-                                    Dim fileNameOnly As String = IO.Path.GetFileNameWithoutExtension(evidenciacaminho)
-                                    Dim extension As String = IO.Path.GetExtension(evidenciacaminho)
-                                    Dim path As String = My.Settings.DatabaseLocation & "\" & Cliente.Text
-                                    Dim newFullPath As String = My.Settings.DatabaseLocation & "\" & Cliente.Text & "\" & IO.Path.GetFileName(evidenciacaminho)
-                                    While IO.File.Exists(newFullPath)
-                                        Dim tempFileName As String = fileNameOnly & count + 1
-                                        newFullPath = IO.Path.Combine(path, (tempFileName + extension))
-                                        count = count + 1
-                                    End While
+                                If evidenciacaminho <> "" Then
+                                    If IO.Directory.Exists(My.Settings.DatabaseLocation & "\" & Cliente.Text) Then
+                                        Dim count As Integer = 0
+                                        Dim fileNameOnly As String = IO.Path.GetFileNameWithoutExtension(evidenciacaminho)
+                                        Dim extension As String = IO.Path.GetExtension(evidenciacaminho)
+                                        Dim path As String = My.Settings.DatabaseLocation & "\" & Cliente.Text
+                                        Dim newFullPath As String = My.Settings.DatabaseLocation & "\" & Cliente.Text & "\" & IO.Path.GetFileName(evidenciacaminho)
+                                        While IO.File.Exists(newFullPath)
+                                            Dim tempFileName As String = fileNameOnly & count + 1
+                                            newFullPath = IO.Path.Combine(path, (tempFileName + extension))
+                                            count = count + 1
+                                        End While
+                                        If IO.File.Exists(evidenciacaminho) Then
+                                            IO.File.Copy(evidenciacaminho, newFullPath, True)
+                                            newac.Evidência = newFullPath
+                                        End If
+                                    Else
+                                        IO.Directory.CreateDirectory(My.Settings.DatabaseLocation & "\" & Cliente.Text)
+                                        Dim count As Integer = 0
+                                        Dim fileNameOnly As String = IO.Path.GetFileNameWithoutExtension(evidenciacaminho)
+                                        Dim extension As String = IO.Path.GetExtension(evidenciacaminho)
+                                        Dim path As String = My.Settings.DatabaseLocation & "\" & Cliente.Text
+                                        Dim newFullPath As String = My.Settings.DatabaseLocation & "\" & Cliente.Text & "\" & IO.Path.GetFileName(evidenciacaminho)
+                                        While IO.File.Exists(newFullPath)
+                                            Dim tempFileName As String = fileNameOnly & count + 1
+                                            newFullPath = IO.Path.Combine(path, (tempFileName + extension))
+                                            count = count + 1
+                                        End While
 
-                                    If IO.File.Exists(evidenciacaminho) Then
-                                        IO.File.Copy(evidenciacaminho, newFullPath, True)
-                                        newac.Evidência = newFullPath
+                                        If IO.File.Exists(evidenciacaminho) Then
+                                            IO.File.Copy(evidenciacaminho, newFullPath, True)
+                                            newac.Evidência = newFullPath
+                                        End If
                                     End If
                                 End If
                                 x2.Ações.Add(newac)
-                            End If
+                                End If
                         Next
                         x2.Cliente = Cliente.Text
                         x2.Origem = Origem.Text
@@ -181,7 +181,7 @@ Public Class PlanoControl
                                 For Each action As Ação In Form1.templist
                                     If action.NãoConformidadeFalha = ac.NãoConformidadeFalha And action.Ação = ac.Ação Then
                                         If Form1.sendmessage(html1, ac.Responsáveis, ac.GerenteEmail, True, False) Then
-                                            Form1.save()
+
                                         End If
                                     End If
                                 Next
